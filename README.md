@@ -101,19 +101,6 @@ When nothing is detected, bounding boxes with `value == 0` are skipped silently.
 
 ---
 
-## Known issues
-
-- The sketch allocates the snapshot buffer on the heap every loop iteration via `malloc` and frees it after inference. If PSRAM is not available or fragmented, allocation can fail — check for the `ERR: Failed to allocate snapshot buffer` message on Serial.
-- The model input size is defined by the Edge Impulse export (`EI_CLASSIFIER_INPUT_WIDTH` / `EI_CLASSIFIER_INPUT_HEIGHT`). If the captured frame size does not match, the `ei_camera_capture` function handles rescaling automatically via `crop_and_interpolate_rgb888`.
-- BGR→RGB swap is applied manually in `ei_camera_get_data` due to a known issue in the esp32-camera driver (https://github.com/espressif/esp32-camera/issues/379).
-
----
-
-## File structure
-
-```
-arucosNaprils.ino   — main sketch, camera init, inference loop
-```
 
 The Edge Impulse library (installed separately) provides:
 ```
