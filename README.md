@@ -71,12 +71,6 @@ Included in the ESP32 Arduino Core. No separate install needed.
 
 ## Serial output
 
-Open Serial Monitor at **115200 baud**. The sketch waits for the Serial connection before starting — if you want it to run immediately without a monitor connected, comment out this line in `setup()`:
-
-```cpp
-while (!Serial);
-```
-
 Example output when a tag is detected:
 
 ```
