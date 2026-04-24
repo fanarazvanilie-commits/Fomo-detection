@@ -8,7 +8,7 @@ ArUco / AprilTag detection using a trained Edge Impulse model running on the XIA
 
 - Initialises the camera at QVGA (320×240) in JPEG format
 - Captures a frame every loop iteration
-- Converts JPEG to RGB888 and rescales to the model input size
+- Converts JPEG to Grayscale and rescales to the model input size
 - Runs the Edge Impulse classifier (`run_classifier`)
 - Prints bounding boxes, classification scores, and anomaly results to Serial at 115200 baud
 
